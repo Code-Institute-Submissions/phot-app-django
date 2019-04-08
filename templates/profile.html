@@ -1,12 +1,16 @@
 {% extends 'base.html' %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Profile | {{ user.full_name }}{% endblock %}
 
 {% block content %}
 {% if user.is_authenticated %}
-  Hi {{ user.username }}!
+  <p>Hi {{ user.username }}!</p>
+  <br>
+  <div>
   <img src="{{MEDIA_URL}}{{user.profile_picture}}"></img>
+  </div>
 
+  <p>Introduction: {{ user.introduction }}</p>
   <p><a href="{% url 'logout' %}">logout</a></p>
 {% else %}
   <p>You are not logged in</p>
