@@ -15,6 +15,25 @@ class Pictures(models.Model):
         return self.picture
 
 
+class Categories(models.Model):
+    CHOICES = (
+        ("nature", "Nature"),
+        ("animals", "Animals"),
+        ("cars", "Cars"),
+        ("cities", "Cities"),
+        ("fitness", "Fitness"),
+        ("motorcycles", "Motorcycles"),
+        ("people", "People"),
+        ("space", "Space"),
+        ("technology", "Technology"),
+        )
+    category = models.CharField(max_length=10, choices=CHOICES, default="nature")
+    images = models.ForeignKey(Pictures, on_delete=models.SET_NULL, null=True, default="")
+    
+    def __unicode__(self):
+        return self.category
+        
+        
 class CustomUser(AbstractUser):
 
     full_name = models.CharField(max_length=200, default='')
@@ -23,3 +42,5 @@ class CustomUser(AbstractUser):
     portfolio = models.ForeignKey(Pictures, on_delete=models.SET_NULL, null=True, default="")
     def __unicode__(self):
         return self.email
+        
+        
