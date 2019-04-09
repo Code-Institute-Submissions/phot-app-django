@@ -20,5 +20,10 @@ class UploadImageView(generic.CreateView):
     success_url = reverse_lazy('profile')
     template_name = 'profile_list.html'
     
+"""
+down here i need to put a list view (class based) that shows all the images associated with custom user
+on the profile page itself
+"""
+    
     
 

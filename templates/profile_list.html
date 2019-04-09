@@ -18,6 +18,12 @@
   {% csrf_token %}
   <button type="file">upload</button>
 </form>
+
+<h2>Your Portfolio</h2>
+<div>
+  <img src="{{MEDIA_URL}}{{user.picture}}"></img>
+</div>
+
 {% else %}
 <p>You are not logged in</p>
 <a href="{% url 'login' %}">login</a> |
