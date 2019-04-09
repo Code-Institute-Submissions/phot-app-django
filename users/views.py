@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from users.forms import CustomUserCreationForm, UploadImageForm
-from users.models import CustomUser
+from users.models import CustomUser, Pictures
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import generic
 from django.views.generic import ListView, DetailView 
@@ -18,5 +18,7 @@ class SignUp(generic.CreateView):
 class UploadImageView(generic.CreateView):
     form_class = UploadImageForm
     success_url = reverse_lazy('profile')
-    template_name = 'profile.html'
+    template_name = 'profile_list.html'
+    
+    
 
