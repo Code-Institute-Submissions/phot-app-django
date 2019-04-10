@@ -18,6 +18,6 @@ class CustomUserChangeForm(UserChangeForm):
 
 class UploadImageForm(forms.ModelForm):
     class Meta:
-        model = CustomUser
-        fields = ['portfolio']
+        model = Pictures
+        fields = ['picture']
         

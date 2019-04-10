@@ -4,7 +4,7 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-<p>Hi {{ user.username }}!</p>
+<p>Welcome to your profile {{ user.full_name }}!</p>
 <br>
 <div>
   <img src="{{MEDIA_URL}}{{user.profile_picture}}"></img>
@@ -20,9 +20,11 @@
 </form>
 
 <h2>Your Portfolio</h2>
+{% for picture in object_list %}
 <div>
-  <img src="{{MEDIA_URL}}{{user.picture}}"></img>
+  <img src="{{MEDIA_URL}}{{Pictures.picture}}"></img>
 </div>
+{% endfor %}
 
 {% else %}
 <p>You are not logged in</p>

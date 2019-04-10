@@ -10,10 +10,9 @@ class Pictures(models.Model):
     date = models.DateTimeField(default=timezone.now())
     views = models.IntegerField(default=0)
     likes = models.IntegerField(default=0)
-    
     def __unicode__(self):
         return self.picture
-
+    
 
 class Categories(models.Model):
     CHOICES = (

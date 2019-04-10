@@ -13,17 +13,21 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 class SignUp(generic.CreateView):
     form_class = CustomUserCreationForm
     success_url = reverse_lazy('login')
-    template_name = 'signup.html'
+    template_name = 'users/signup.html'
     
 class UploadImageView(generic.CreateView):
     form_class = UploadImageForm
     success_url = reverse_lazy('profile')
-    template_name = 'profile_list.html'
+    template_name = 'users/profile_list.html'
     
-"""
-down here i need to put a list view (class based) that shows all the images associated with custom user
-on the profile page itself
-"""
+class ShowPortfolioImagesList(ListView):
+    template_name = 'users/profile_list.html'
+    queryset = Pictures.objects.all()
+    context_object_name = 'pictures'
+    ordering = ['-views']
+    paginate_by = 10
+    
+
     
     
 
