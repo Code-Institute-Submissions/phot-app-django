@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Profile | {{ user.full_name }}{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<h2>Welcome to your profile {{ user.full_name }}!</h2>
+<br>
+<div>
+  <img src="{{MEDIA_URL}}{{user.profile_picture}}"></img>
+</div>
+
+<p>Introduction: {{ user.introduction }}</p>
+<p><a href="{% url 'logout' %}">logout</a></p>
+
+<form method='POST' enctype='multipart/form-data'>
+  {{ form.as_p }} 
+  {% csrf_token %}
+  <button type="file">upload</button>
+</form>
+
+<h3><a href="{%url 'portfolio' %}">go to portfolio</a></h3>
+
+{% else %}
+<p>You are not logged in</p>
+<a href="{% url 'login' %}">login</a> |
+<a href="{% url 'signup' %}">signup</a>
+{% endif %}
+{% endblock %}

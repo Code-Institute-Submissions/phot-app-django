@@ -13,20 +13,24 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 class SignUp(generic.CreateView):
     form_class = CustomUserCreationForm
     success_url = reverse_lazy('login')
-    template_name = 'users/signup.html'
+    template_name = 'signup.html'
+ 
     
 class UploadImageView(generic.CreateView):
     form_class = UploadImageForm
     success_url = reverse_lazy('profile')
-    template_name = 'users/profile_list.html'
+    template_name = 'users/profile.html'
     
+
 class ShowPortfolioImagesList(ListView):
-    template_name = 'users/profile_list.html'
+    template_name = 'users/portfolio.html'
     queryset = Pictures.objects.all()
-    context_object_name = 'pictures'
-    ordering = ['-views']
-    paginate_by = 10
+    context_object_name = 'pictures_list'
+    ordering = ['-date']
     
+    
+    
+
 
     
     

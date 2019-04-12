@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Profile | {{ user.full_name }}{% endblock %}
+
+{% block content %}
+<h2>Your Portfolio</h2>
+
+{% for picture in pictures_list %}
+  <div>
+  <img src="{{MEDIA_URL}}{{picture.picture}}"></img>
+  </div>
+{% endfor %}
+
+{% endblock %}
