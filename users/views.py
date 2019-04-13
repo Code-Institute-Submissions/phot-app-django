@@ -19,6 +19,9 @@ class UploadImageView(generic.CreateView):
     success_url = reverse_lazy('profile')
     template_name = 'users/profile.html'
     
+    def get_queryset(self):
+        return Pictures.objects.filter(user=self.request.user)
+
 
 class ShowPortfolioImagesList(ListView):
     template_name = 'users/portfolio.html'
