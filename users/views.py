@@ -14,19 +14,19 @@ class SignUp(generic.CreateView):
     template_name = 'signup.html'
  
     
-class UploadImageView(generic.CreateView):
-    form_class = UploadImageForm
-    success_url = reverse_lazy('profile')
-    template_name = 'users/profile.html'
-    
-    def get_queryset(self):
-        return Pictures.objects.filter(user=self.request.user)
+def uploadImage(request):
+    if request.method == 'POST':
+        form = UploadImageForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.user = request.user
+            post.save()
+    else : 
+        form = UploadImageForm()
+    return render(request, 'users/profile.html', {'form': form})
 
 
-class ShowPortfolioImagesList(ListView):
-    template_name = 'users/portfolio.html'
-    context_object_name = 'pictures_list'
-    ordering = ['-date']
-    
-    def get_queryset(self):
-        return Pictures.objects.filter(user=self.request.user)
+def portfolioPictures(request):
+    user=request.user
+    portfolio_posts = Pictures.objects.filter(user=user).order_by('-date')
+    return render(request, "users/portfolio.html", {'portfolio_posts': portfolio_posts})
