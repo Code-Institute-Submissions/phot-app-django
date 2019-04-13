@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
 from users.forms import CustomUserCreationForm, UploadImageForm
 from users.models import CustomUser, Pictures
@@ -7,8 +7,6 @@ from django.views import generic
 from django.views.generic import ListView, DetailView 
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
-#use it to redirect a user to the login page before accessing a certain page
-#  login_url = '/'
 
 class SignUp(generic.CreateView):
     form_class = CustomUserCreationForm
@@ -24,14 +22,8 @@ class UploadImageView(generic.CreateView):
 
 class ShowPortfolioImagesList(ListView):
     template_name = 'users/portfolio.html'
-    queryset = Pictures.objects.all()
     context_object_name = 'pictures_list'
     ordering = ['-date']
     
-    
-    
-
-
-    
-    
-
+    def get_queryset(self):
+        return Pictures.objects.filter(user=self.request.user)

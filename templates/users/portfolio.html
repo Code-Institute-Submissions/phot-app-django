@@ -3,12 +3,20 @@
 {% block title %}Profile | {{ user.full_name }}{% endblock %}
 
 {% block content %}
-<h2>Your Portfolio</h2>
+{% if user.is_authenticated %}
 
+<h2>Your Portfolio</h2>
 {% for picture in pictures_list %}
-  <div>
+<div>
   <img src="{{MEDIA_URL}}{{picture.picture}}"></img>
-  </div>
+</div>
 {% endfor %}
 
+{% else %}
+
+<p>You are not logged in</p>
+<a href="{% url 'login' %}">login</a> |
+<a href="{% url 'signup' %}">signup</a>
+
+{% endif %}
 {% endblock %}
