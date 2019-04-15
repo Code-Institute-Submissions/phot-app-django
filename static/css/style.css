@@ -1,17 +1,38 @@
+nav {
+  background-image: url("static/img/america-architecture-bay-208745.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+}
+nav ul li a {
+  color: black;
+  text-decoration: none;
+}
 .flex {
   border: 1px solid black;
   width: 100%;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   display: flex;
   flex-wrap: wrap;
 }
 
 .img-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   border: 1px solid black ;
   text-align: center;
   margin: 0.5rem;
-  width: 25rem;
-  height: 25rem;
+  width: 20rem;
+  height: 22rem;
 }
 img {
   max-width: 100%;
