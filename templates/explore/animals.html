@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% for image in animals %}
+
+<a href="{% url 'detail_image' pk=image.pk %}">
+<div>
+    <img src="{{ MEDIA_URL }}{{ image.picture }}">
+</div>
+</a>
+
+{{ image.date }}
+{% endfor %}
+
+{% endblock %}

@@ -16,7 +16,7 @@ class SignUp(generic.CreateView):
     
 def uploadImage(request):
     if request.method == 'POST':
-        form = UploadImageForm(request.POST)
+        form = UploadImageForm(request.POST, request.FILES)
         if form.is_valid():
             post = form.save(commit=False)
             post.user = request.user

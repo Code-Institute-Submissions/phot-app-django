@@ -18,9 +18,14 @@ from django.urls import path, include
 from django.views.generic.base import TemplateView
 from django.conf import settings
 from django.conf.urls.static import static
+from home import views
+from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('home/', views.get_all_images, name="home"),
+    path('image/<int:pk>', views.detail_image, name="detail_image"),
+    path('explore/', include('explore.urls')),
     path('users/', include('users.urls')),
     path('users/', include('django.contrib.auth.urls')),
 ]
