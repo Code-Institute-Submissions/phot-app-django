@@ -1,0 +1,19 @@
+.flex {
+  border: 1px solid black;
+  width: 100%;
+  justify-content: space-around;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.img-container {
+  border: 1px solid black ;
+  text-align: center;
+  margin: 0.5rem;
+  width: 25rem;
+  height: 25rem;
+}
+img {
+  max-width: 100%;
+  max-height: 100%;
+}

@@ -4,4 +4,5 @@ from django.views.generic.base import TemplateView
 
 urlpatterns = [
         path('image/<int:pk>', views.detail_image, name="detail_image"),
+        path('comments/', views.comments_detail_page, name="comments"),
     ]

@@ -7,4 +7,12 @@
 
 <p>Views: {{ image.views }}</p>
 
+<a href="{% url 'comments' %}">comment</href>
+
+
+{% for comment in comments %}
+<p>{{ comment.name }}</p>
+<p>{{ comment.comment }}</p>
+{% endfor %}
+
 {% endblock %}
