@@ -24,7 +24,7 @@ from django.urls import path
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', views.get_all_images, name="home"),
-    path('image/<int:pk>', views.detail_image, name="detail_image"),
+    path('details/', include('detail.urls')),
     path('explore/', include('explore.urls')),
     path('users/', include('users.urls')),
     path('users/', include('django.contrib.auth.urls')),
