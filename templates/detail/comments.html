@@ -2,8 +2,14 @@
 {% block content %}
 
 {% for comment in comments %}
-<span>{{ comment.name }}</span> <br> 
-<span>{{ comment.comment }}</span>
+
+<div class="comments-date">
+<span>posted on: {{ comment.date }}</span>
+</div>
+<div class="comments">
+<span>{{ comment.name }} </span>: <br>  
+<span>{{ comment.comment }}</span>  
+</div>
 
 {% endfor %}
 <br>

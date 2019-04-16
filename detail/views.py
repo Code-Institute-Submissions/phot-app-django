@@ -10,14 +10,15 @@ def detail_image(request, pk):
     image.save()
     return render(request, 'detail/detail.html', {'image': image})
  
-    
+
+"""
+Match the comment with the picture you're commenting on 
+"""
 def comments_detail_page(request):
     
     if request.method == 'POST':
         comment = CommentForm(request.POST, request.FILES)
         if comment.is_valid():
-            comment.save(commit=False)
-            comment.user = request.user
             comment.save()
             return redirect(all_comments_page)
     
@@ -28,5 +29,6 @@ def comments_detail_page(request):
     
     
 def all_comments_page(request):
-    comments = Comment.objects.all()
+    
+    comments = Comment.objects.all().order_by('-date')
     return render(request, 'detail/comments.html', {'comments': comments})
