@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% for comment in comments %}
+<span>{{ comment.name }}</span> <br> 
+<span>{{ comment.comment }}</span>
+
+{% endfor %}
+<br>
+<a href="{% url 'post' %} ">post a comment</a>
+
+{% endblock %}

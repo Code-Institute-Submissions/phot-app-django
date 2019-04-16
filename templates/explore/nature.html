@@ -1,13 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
-
-{% for image in nature %}
-<a href="{% url 'detail_image' pk=image.pk %}">
-<div>
-    <img src="{{ MEDIA_URL }}{{ image.picture }}">
+<div class="align-container">
+    <div class="flex">
+        {% for image in nature %}
+        <a href="{% url 'detail_image' pk=image.pk %}">
+            <div class="image-container">
+                <img src="{{ MEDIA_URL }}{{ image.picture }}">
+            </div>
+        </a>
+        {% endfor %}
+    </div>
 </div>
-{{ image.date }}
-</a>
-{% endfor %}
-
 {% endblock %}

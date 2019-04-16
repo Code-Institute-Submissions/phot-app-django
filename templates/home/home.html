@@ -1,15 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
-
 <div class="align-container">
-<div class="flex">
-{% for image in images %}
-<a href="{% url 'detail_image' pk=image.pk %}">
-<div class="img-container">
-    <img src="{{ MEDIA_URL }}{{ image.picture }}">
-</div>
-</a>
-{% endfor %}
-</div>
+    <div class="flex">
+        {% for image in images %}
+        <a href="{% url 'detail_image' pk=image.pk %}">
+            <div class="img-container">
+                <img src="{{ MEDIA_URL }}{{ image.picture }}">
+            </div>
+        </a>
+        {% endfor %}
+    </div>
 </div>
 {% endblock %}

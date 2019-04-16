@@ -16,8 +16,10 @@ def comments_detail_page(request):
     if request.method == 'POST':
         comment = CommentForm(request.POST, request.FILES)
         if comment.is_valid():
+            comment.save(commit=False)
+            comment.user = request.user
             comment.save()
-            return redirect(detail_image)
+            return redirect(all_comments_page)
     
     else: 
         comment = CommentForm()
@@ -25,6 +27,6 @@ def comments_detail_page(request):
     return render(request, 'detail/comment.html', {'comment': comment})
     
     
-def get_comments_on_detail_page(request):
-    comments = get_object_or_404(Comment)
-    return render(request, 'detail/detail.html', {'comments': comments})
+def all_comments_page(request):
+    comments = Comment.objects.all()
+    return render(request, 'detail/comments.html', {'comments': comments})

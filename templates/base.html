@@ -1,23 +1,34 @@
-<!DOCTYPE html>
-{% load static %} 
+<!DOCTYPE html> {% load static %}
 <html>
+
 <head>
   <meta charset="utf-8">
   <title>{% block title %}{% endblock %}</title>
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
+
 <body>
-  <nav>
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Explore</a></li>
-      <li><a href="#">Sign In</a></li>
-      <li><a href="#">Sign Up</a></li>
-    </ul>
-  </nav>
+  <div class="bg">
+    <div class="toggle">
+      <a href="#">Menu</a>
+    </div>
+    <nav class="hide-show">
+      <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="#">Explore</a></li>
+        <li><a href="#">Sign In</a></li>
+        <li><a href="#">Sign Up</a></li>
+      </ul>
+    </nav>
+  </div>
   <main>
-    {% block content %}
-    {% endblock %}
+    {% block content %} {% endblock %}
   </main>
+  <footer>
+    2019
+  </footer>
+  <script src="{% static 'js/style.js' %}"></script>
 </body>
+
 </html>
