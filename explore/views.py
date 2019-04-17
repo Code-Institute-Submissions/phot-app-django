@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from users.models import Pictures
-
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 
 def get_category_nature(request):
     nature = Pictures.objects.filter(category__exact="nature").order_by('-date')

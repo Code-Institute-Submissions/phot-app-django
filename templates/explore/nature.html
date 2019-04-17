@@ -1,14 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="align-container">
+    {% for image in nature %}
     <div class="flex">
-        {% for image in nature %}
         <a href="{% url 'detail_image' pk=image.pk %}">
-            <div class="image-container">
+            <div class="img-container">
                 <img src="{{ MEDIA_URL }}{{ image.picture }}">
             </div>
         </a>
-        {% endfor %}
+        <form id="submit" action="{% url 'detail_image' pk=image.pk %}" method='POST'>
+            {% csrf_token %}
+            <button id="like">Like: {{ image.likes }}</button>
+        </form>
     </div>
+    {% endfor %}
 </div>
 {% endblock %}

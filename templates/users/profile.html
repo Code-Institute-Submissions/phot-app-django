@@ -6,7 +6,7 @@
 {% if user.is_authenticated %}
 <h2>Welcome to your profile {{ user.full_name }}!</h2>
 <br>
-<div>
+<div class="img-container">
   <img src="{{MEDIA_URL}}{{user.profile_picture}}"></img>
 </div>
 
@@ -19,7 +19,18 @@
   <button type="file">upload</button>
 </form>
 
-<h3><a href="{%url 'portfolio' %}">go to portfolio</a></h3>
+<h2>Your Portfolio, {{ user.full_name }}</h2>
+
+{% for portfolio_post in portfolio_posts %}
+<div class=img-container>
+  <img src="{{MEDIA_URL}}{{portfolio_post.picture}}"></img>
+</div>
+
+<form>
+  <button>Delete</button>
+</form>
+
+{% endfor %}
 
 {% else %}
 <p>You are not logged in</p>

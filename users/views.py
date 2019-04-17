@@ -6,6 +6,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import generic
 from django.views.generic import ListView, DetailView 
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.contrib import messages
 
 
 class SignUp(generic.CreateView):
@@ -15,6 +16,9 @@ class SignUp(generic.CreateView):
  
     
 def uploadImage(request):
+    user=request.user
+    portfolio_posts = Pictures.objects.filter(user=user).order_by('-date')
+    
     if request.method == 'POST':
         form = UploadImageForm(request.POST, request.FILES)
         if form.is_valid():
@@ -23,10 +27,6 @@ def uploadImage(request):
             post.save()
     else : 
         form = UploadImageForm()
-    return render(request, 'users/profile.html', {'form': form})
-
-
-def portfolioPictures(request):
-    user=request.user
-    portfolio_posts = Pictures.objects.filter(user=user).order_by('-date')
-    return render(request, "users/portfolio.html", {'portfolio_posts': portfolio_posts})
+        
+    return render(request, 'users/profile.html', {'form': form, 'portfolio_posts': portfolio_posts})
+    

@@ -7,3 +7,20 @@ $(document).ready(function() {
       e.preventDefault();
   });
 });
+
+/*
+$(document).on('submit', '#submit', function(e) {
+  e.preventDefault();
+  
+  ajax({
+    type: 'POST', 
+    url: 'image/<int:pk>',
+    data: {
+       like: $('#like').val()
+    },
+    success: function(){
+      
+    }
+  });
+});
+*/
