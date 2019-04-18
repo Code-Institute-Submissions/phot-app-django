@@ -29,6 +29,7 @@ a {
   flex-wrap: wrap;
 }
 .img-container {
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
