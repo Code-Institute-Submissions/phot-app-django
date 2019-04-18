@@ -10,6 +10,5 @@ def detail_image(request, pk):
     if request.method == 'POST':
         image.likes +=1
         image.save()
-        return redirect(get_all_images)
         
     return render(request, 'detail/detail.html', {'image': image})
