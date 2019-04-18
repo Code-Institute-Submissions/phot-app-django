@@ -1,5 +1,5 @@
 {% extends 'base.html' %} {% block content %}
-
+<a href="#">Donate</a>
 <div class="align-container">
     <div class="flex">
         <div class="img-container">
@@ -7,6 +7,6 @@
         </div>
     </div>
 </div>
-
-<p>Views: {{ image.views }}</p>
+<p>{{ image.views }} views</p>
+<p>{{ image.likes }} likes</p>
 {% endblock %}
