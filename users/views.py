@@ -30,28 +30,3 @@ def uploadImage(request):
         form = UploadImageForm()
         
     return render(request, 'users/profile.html', {'form': form, 'portfolio_posts': portfolio_posts})
-    
-def portfolio_detail_page(request, pk):
-    picture = get_object_or_404(Pictures, pk=pk)
-    return render(request, 'users/portfolio_detail.html', {'picture': picture})
-
-
-def delete_picture(request):
-    id = request.POST['pictures_id']
-    picture = get_object_or_404(Pictures, id=id)
-    if request.user.is_authenticated:
-        if request.method == 'POST':
-            pictures = get_object_or_404(Pictures, pk=id)
-            try:
-                pictures.delete()
-                messages.success(request,
-                                 'You have successfully deleted the post!')
-
-            except pictures.DoesNotExist:
-                messages.warning(request, 'The post could not be deleted.')
-    else:
-        return HttpResponseForbidden()
-
-    return redirect(uploadImage)
-        
-        
