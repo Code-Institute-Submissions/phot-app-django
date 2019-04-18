@@ -1,12 +1,13 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
-from users.forms import CustomUserCreationForm, UploadImageForm
+from users.forms import CustomUserCreationForm, UploadImageForm, DeleteForm
 from users.models import CustomUser, Pictures
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import generic
 from django.views.generic import ListView, DetailView 
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib import messages
+from django.http import HttpResponseForbidden, HttpResponse
 
 
 class SignUp(generic.CreateView):
@@ -30,3 +31,27 @@ def uploadImage(request):
         
     return render(request, 'users/profile.html', {'form': form, 'portfolio_posts': portfolio_posts})
     
+def portfolio_detail_page(request, pk):
+    picture = get_object_or_404(Pictures, pk=pk)
+    return render(request, 'users/portfolio_detail.html', {'picture': picture})
+
+
+def delete_picture(request):
+    id = request.POST['pictures_id']
+    picture = get_object_or_404(Pictures, id=id)
+    if request.user.is_authenticated:
+        if request.method == 'POST':
+            pictures = get_object_or_404(Pictures, pk=id)
+            try:
+                pictures.delete()
+                messages.success(request,
+                                 'You have successfully deleted the post!')
+
+            except pictures.DoesNotExist:
+                messages.warning(request, 'The post could not be deleted.')
+    else:
+        return HttpResponseForbidden()
+
+    return redirect(uploadImage)
+        
+        

@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% block content %}
+{% if user.is_authenticated %}
+<div class="align-container">
+    <div class="flex">
+        <div class="img-container">
+            <img src="{{ MEDIA_URL }}{{ picture.picture }}">
+        </div>
+    </div>
+</div>
+<form action="{% url 'delete_picture' %}" method="POST" enctype='multipart/form-data'>
+    <input type="submit" id ='delete' value="Delete Picture"/>
+    {% csrf_token %}
+</form>
+<p>{{ picture.views }} views</p>
+<p>{{ picture.likes }} likes</p>
+{% else %}
+<p>You are not logged in</p>
+<a href="{% url 'login' %}">login</a> |
+<a href="{% url 'signup' %}">signup</a>
+{% endif %}
+{% endblock %}
