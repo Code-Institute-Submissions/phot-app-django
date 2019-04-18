@@ -1,5 +1,4 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 <div class="align-container">
     {% for image in nature %}
     <div class="flex">
@@ -8,9 +7,9 @@
                 <img src="{{ MEDIA_URL }}{{ image.picture }}">
             </div>
         </a>
-        <form id="submit" action="{% url 'detail_image' pk=image.pk %}" method='POST'>
+        <form class="img-like" data-likes="{{image.likes}}" data-id="{{image.id}}" action="{% url 'detail_image' pk=image.pk %}" method='POST'>
             {% csrf_token %}
-            <button id="like">Like: {{ image.likes }}</button>
+            <button class="no-bg" type="submit"><i class="far fa-heart"></i>{{ image.likes }}</button>
         </form>
     </div>
     {% endfor %}
