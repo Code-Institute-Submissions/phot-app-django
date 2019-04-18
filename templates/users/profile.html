@@ -22,14 +22,11 @@
 <h2>Your Portfolio, {{ user.full_name }}</h2>
 
 {% for portfolio_post in portfolio_posts %}
-<div class=img-container>
+<a href="{% url 'portfolio_detail_page' pk=portfolio_post.pk %}">
+<div class="img-container">
   <img src="{{MEDIA_URL}}{{portfolio_post.picture}}"></img>
 </div>
-
-<form>
-  <button>Delete</button>
-</form>
-
+</a>
 {% endfor %}
 
 {% else %}
