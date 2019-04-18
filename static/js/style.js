@@ -14,7 +14,7 @@ $(document).on('submit', '#submit', function(e) {
   
   ajax({
     type: 'POST', 
-    url: 'image/<int:pk>',
+    url: 'home/',
     data: {
        like: $('#like').val()
     },
