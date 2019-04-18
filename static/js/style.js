@@ -6,21 +6,29 @@ $(document).ready(function() {
       $(nav).slideToggle('slow');
       e.preventDefault();
   });
-});
-
-/*
-$(document).on('submit', '#submit', function(e) {
-  e.preventDefault();
   
-  ajax({
+  
+$('.img-like').on('submit', function(e) {
+  e.preventDefault();
+  var id = $(this).attr('data-id')
+  var likes = Number($(this).attr('data-likes'))
+  var formElement = $(this)
+  var token = $(this).children('input[name=csrfmiddlewaretoken]').val();
+  var button = $(this).children('button')
+  $.ajax({
     type: 'POST', 
-    url: 'home/',
+    url: `/details/image/${id}`,
     data: {
-       like: $('#like').val()
+       like: $('#like').val(),
+       csrfmiddlewaretoken: token
     },
     success: function(){
-      
+      likes +=1
+      formElement.attr('data-likes', likes)
+      button.html(likes)
     }
   });
 });
-*/
+});
+
+
