@@ -1,12 +1,12 @@
 {% extends 'base.html' %} {% block content %}
 
 <div class="photographer">
-    <img class="photographer-profile-picture" src="{{MEDIA_URL}}{{user.profile_picure}}">
-    <span>{{ user.full_name }} made this picture for you, enjoy it!</span>
+    <img class="photographer-profile-picture" src="{{MEDIA_URL}}{{user.profile_picture}}">
+    <span class="padding-space-img"> Photographer: {{ user.full_name }}</span>
 </div>
 
 <div class="button-flex">
-    <a class="donate-link" href="#">Donate</a>
+    <a class="donate-link" href="{% url 'donate' %}">Donate</a>
     <form class="download-button">
     {% csrf_token %}
     <button class="button-style" type="submit"><i class="fas fa-download"></i></button>

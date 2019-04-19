@@ -15,7 +15,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
@@ -41,6 +40,7 @@ INSTALLED_APPS = [
     'home',
     'explore',
     'detail',
+    'donate',
 ]
 
 MIDDLEWARE = [
@@ -151,4 +151,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
+
+STRIPE_PUBLISHABLE_KEY = "pk_test_ZOQMm0n0Y3OCoxznx8ufeunq00mXlHWdJX"
+STRIPE_SECRET_KEY = "sk_test_cFrwY9eSokJOtvTs51UlzouH00Sff0lpP0"
+
+
+
 
