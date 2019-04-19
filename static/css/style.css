@@ -39,6 +39,7 @@ a {
   text-decoration: none;
 }
 
+
 /*----------buttons and forms------------------*/
 .img-like {
   position: relative;
@@ -56,6 +57,7 @@ a {
 .no-bg:hover {
   color: red;
 }
+
 
 /*---------------images------------------*/
 .button-flex {
@@ -93,8 +95,10 @@ img {
 }
 .padding-space-img {
    padding-left: 0.5rem;
-   font-size: 1rem;
-   color: grey;
+}
+.modify-span {
+    color: grey;
+    font-size: 1rem;
 }
 .photographer-profile-picture {
   width: 4.5rem;
@@ -121,6 +125,25 @@ img {
   border-radius: 25%;
   padding: 0.5rem;
 }
+
+
+/*------------------donate page-------------*/
+.stripe-donate-plans-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 3rem 0.5rem 5rem 0.5rem;
+}
+.stripe-donate-plans-forms-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem 0rem 1rem 0rem;
+}
+p {
+  text-align: center;
+}
+
 
 /*----------------footer------------------*/
 footer {

@@ -1,39 +1,34 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 
-<h2>Hi there!</h2>
-<p>Great to hear that you want to contribute to our website. Photgallery is a non porfit organization that allows everyone to download and use pictures for free. Every donation you make will be used to
-give our staff and photgraphers the necessary tools to do their jobs so that you can enjoy the best user experience! We all thank you in advance here at
-photgallery for your contribution.</p>
+<div class="stripe-donate-plans-div">
+  
+  <h2>Hi there!</h2>
+  <p class="p">Great to hear that you want to contribute to our website. Photgallery is a non porfit organization that allows everyone to download and use pictures for free. Every donation you make will be used to give our staff and photgraphers the necessary tools
+    to do their jobs so that you can enjoy the best user experience! We all thank you in advance here at photgallery for your contribution.</p>
+    
+  <div class="stripe-donate-plans-forms-div">
+    <h3>Donate $5.00</h3>
+    <form action="{% url 'charge_five' %}" method="post">
+      {% csrf_token %}
+      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="{{ key }}" data-description="A Django Charge" data-amount="500" data-locale="auto"></script>
+    </form>
+  </div>
 
+  <div class="stripe-donate-plans-forms-div">
+    <h3>Donate $10.00</h3>
+    <form action="{% url 'charge_ten' %}" method="post">
+      {% csrf_token %}
+      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="{{ key }}" data-description="A Django Charge" data-amount="1000" data-locale="auto"></script>
+    </form>
+  </div>
 
-<h2>Donate $5.00</h2>
-<form action="{% url 'charge_five' %}" method="post">
-  {% csrf_token %}
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="{{ key }}"
-          data-description="A Django Charge"
-          data-amount="500"
-          data-locale="auto"></script>
-</form>
+  <div class="stripe-donate-plans-forms-div">
+    <h3>Donate $15.00</h3>
+    <form action="{% url 'charge_fifteen' %}" method="post">
+      {% csrf_token %}
+      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="{{ key }}" data-description="A Django Charge" data-amount="1500" data-locale="auto"></script>
+    </form>
+  </div>
 
-<h2>Donate $10.00</h2>
-<form action="{% url 'charge_ten' %}" method="post">
-  {% csrf_token %}
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="{{ key }}"
-          data-description="A Django Charge"
-          data-amount="1000"
-          data-locale="auto"></script>
-</form>
-
-<h2>Donate $15.00</h2>
-<form action="{% url 'charge_fifteen' %}" method="post">
-  {% csrf_token %}
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="{{ key }}"
-          data-description="A Django Charge"
-          data-amount="1500"
-          data-locale="auto"></script>
-</form>
+</div>
 {% endblock %}
