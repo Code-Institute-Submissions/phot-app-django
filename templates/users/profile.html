@@ -1,35 +1,33 @@
-{% extends 'base.html' %}
-
-{% block title %}Profile | {{ user.full_name }}{% endblock %}
-
-{% block content %}
-{% if user.is_authenticated %}
+{% extends 'base.html' %} {% block title %}Profile | {{ user.full_name }}{% endblock %} {% block content %} {% if user.is_authenticated %}
 <h2>Welcome to your profile {{ user.full_name }}!</h2>
 <br>
-<div class="img-container">
-  <img src="{{MEDIA_URL}}{{user.profile_picture}}"></img>
+<div class="flex">
+  <div class="img-container">
+    <img src="{{MEDIA_URL}}{{user.profile_picture}}"></img>
+  </div>
 </div>
 
 <p>Introduction: {{ user.introduction }}</p>
 <p><a href="{% url 'logout' %}">logout</a></p>
 
 <form method='POST' enctype='multipart/form-data'>
-  {{ form.as_p }} 
-  {% csrf_token %}
+  {{ form }} {% csrf_token %}
   <button type="file">upload</button>
 </form>
 
 <h2>Your Portfolio, {{ user.full_name }}</h2>
 
 {% for portfolio_post in portfolio_posts %}
-<div class="img-container">
-  <img src="{{MEDIA_URL}}{{portfolio_post.picture}}"></img>
+<div class="flex">
+  <div class="img-container">
+    <img src="{{MEDIA_URL}}{{portfolio_post.picture}}"></img>
+    <form action="{% url 'delete_picture' portfolio_post.pk %}" enctype='multipart/form-data' method='POST'>
+      {% csrf_token %}
+      <button type="submit">Delete</button>
+    </form>
+  </div>
 </div>
-{% endfor %}
-
-{% else %}
+{% endfor %} {% else %}
 <p>You are not logged in</p>
 <a href="{% url 'login' %}">login</a> |
-<a href="{% url 'signup' %}">signup</a>
-{% endif %}
-{% endblock %}
+<a href="{% url 'signup' %}">signup</a> {% endif %} {% endblock %}

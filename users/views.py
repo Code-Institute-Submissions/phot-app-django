@@ -7,7 +7,7 @@ from django.views import generic
 from django.views.generic import ListView, DetailView 
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib import messages
-from django.http import HttpResponseForbidden, HttpResponse
+from django.http import HttpResponseForbidden, HttpResponse, HttpResponseRedirect
 
 
 class SignUp(generic.CreateView):
@@ -30,3 +30,15 @@ def uploadImage(request):
         form = UploadImageForm()
         
     return render(request, 'users/profile.html', {'form': form, 'portfolio_posts': portfolio_posts})
+
+def delete_picture(request, pk):
+    if request.method == 'POST':
+        picture = Pictures.objects.get(pk=pk)
+        picture.delete()
+    return redirect(uploadImage)
+        
+        
+        
+        
+        
+        
