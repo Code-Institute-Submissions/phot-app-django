@@ -10,11 +10,37 @@
 </head>
 
 <body>
+  
+  <!--Mobile Design Navigation-->
   <div class="bg">
+    <div class='search-bar'>
+      <form action="{% url 'search' %}" method="get">
+        <input class="search-input" type="text" name="q" placeholder="search">
+        <button class="search-button" type="submit"><i class="fas fa-search"></i></button>
+      </form>
     <div class="toggle">
       <a href="#">Menu</a>
     </div>
+    </div>
     <nav class="hide-show">
+      <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="#">Explore</a></li>
+        <li><a href="{% url 'login' %}">Sign In</a></li>
+        <li><a href="{% url 'signup' %}">Sign Up</a></li>
+      </ul>
+    </nav>
+  </div>
+  
+   <!--Tablet and Desktop Design Navigation-->
+  <div class="bg-tablet-desktop">
+    <div class='search-bar'>
+      <form action="{% url 'search' %}" method="get">
+        <input class="search-input" type="text" name="q" placeholder="search">
+        <button class="search-button" type="submit"><i class="fas fa-search"></i></button>
+      </form>
+    </div>
+    <nav class="tablet-nav-design">
       <ul>
         <li><a href="{% url 'home' %}">Home</a></li>
         <li><a href="#">Explore</a></li>
@@ -23,14 +49,14 @@
       </ul>
     </nav>
   </div>
+  
   <main>
     {% block content %} {% endblock %}
   </main>
   <footer>
-    2019
+    <i class="far fa-copyright"></i> 2019
   </footer>
   <script src="{% static 'js/style.js' %}"></script>
-  <script src="{% static 'js/app.js' %}"></script>
 </body>
 
 </html>

@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'detail',
     'donate',
     'searchbar',
+    'bio',
 ]
 
 MIDDLEWARE = [

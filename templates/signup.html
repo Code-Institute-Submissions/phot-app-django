@@ -3,10 +3,16 @@
 {% block title %}Sign Up{% endblock %}
 
 {% block content %}
+
+{% if user.is_authenticated %}
+<h2>You're already a member</h2>
+<a href="{% url 'profile' %}">Go To Your Profile Pgae</a>
+{% else %}
 <h2>Sign up</h2>
 <form method="post" enctype="multipart/form-data">
   {% csrf_token %}
   {{ form.as_p }}
   <button type="submit">Sign up</button>
 </form>
+{% endif %}
 {% endblock %}

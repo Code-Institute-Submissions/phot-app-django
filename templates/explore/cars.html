@@ -1,14 +1,43 @@
 {% extends 'base.html' %}
 {% block content %}
 
-{% for image in cars %}
+<div class="align-container">
+    {% for image in cars %}
+    <div class="flex">
 
-<a href="{% url 'detail_image' pk=image.pk %}">
-<div>
-    <img src="{{ MEDIA_URL }}{{ image.picture }}">
+        <div class="img-container">
+                <a href="{% url 'detail_image' pk=image.pk %}">
+                <img src="{{ MEDIA_URL }}{{ image.picture }}">
+                </a>
+            <form class="img-like" data-likes="{{image.likes}}" data-id="{{image.id}}" action="{% url 'detail_image' pk=image.pk %}" method='POST'>
+                {% csrf_token %}
+                <button class="no-bg" type="submit"><i class="far fa-heart"></i>{{ image.likes }}</button>
+            </form>
+        </div>
+    </div>
+    {% endfor %}
 </div>
-{{ image.date }}
-</a>
-{% endfor %}
 
+
+{% if cars.has_other_pages %}
+  <ul class="pagination">
+    {% if cars.has_previous %}
+      <li><a href="?page={{ cars.previous_page_number }}">&laquo;</a></li>
+    {% else %}
+      <li class="disabled"><span>&laquo;</span></li>
+    {% endif %}
+    {% for i in cars.paginator.page_range %}
+      {% if cars.number == i %}
+        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+      {% else %}
+        <li><a href="?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+    {% if cars.has_next %}
+      <li><a href="?page={{ cars.next_page_number }}">&raquo;</a></li>
+    {% else %}
+      <li class="disabled"><span>&raquo;</span></li>
+    {% endif %}
+  </ul>
+  {% endif %}
 {% endblock %}
