@@ -1,5 +1,6 @@
 {% extends 'base.html' %} {% block content %}
 
+<div class="x">
 <div class="photographer">
     <img class="photographer-profile-picture" src="{{MEDIA_URL}}{{user.profile_picture}}">
     <span class="padding-space-img modify-span"> Photographer: {{ user.full_name }}</span>
@@ -10,15 +11,17 @@
     <a class="button-style" href="{{ MEDIA_URL }}{{ image.picture }}" download><i class="fas fa-download"></i></a>
 </div>
 
-    <div class="flex">
+<div class="align-detail-page-container">
+    <div class="flex-detail-page">
         <div class="img-container">
             <img src="{{ MEDIA_URL }}{{ image.picture }}">
         </div>
     </div>
+</div>
 
 <div class="button-flex">
     <span class="modify-span">{{ image.views }} views</span>
     <span class="modify-span">{{ image.likes }} likes</span>
 </div>
-
+</div>
 {% endblock %}

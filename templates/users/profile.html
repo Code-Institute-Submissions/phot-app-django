@@ -1,39 +1,46 @@
 {% extends 'base.html' %} {% block title %}Profile | {{ user.full_name }}{% endblock %} {% block content %} {% if user.is_authenticated %}
 
-<h2>Welcome to your profile {{ user.full_name }}!</h2>
-<br>
-
-<div class="flex-profile">
-  <div class="img-container">
-    <img src="{{MEDIA_URL}}{{user.profile_picture}}"></img>
-  </div>
-</div>
-
-<p>Introduction: {{ user.introduction }}</p>
-
-<p><a href="{% url 'logout' %}">logout</a></p>
-
-<form method='POST' enctype='multipart/form-data'>
-  {{ form }} {% csrf_token %}
-  <button type="file">upload</button>
-</form>
-
-<h2>Your Portfolio</h2>
-
-<div class="align-container">
-  {% for portfolio_post in portfolio_posts %}
-  <div class="flex">
+<div class="profile-container">
+  <h2>Welcome to your profile {{ user.full_name }}!</h2>
+  <br>
+  
+<div class="align-row">
+  <div class="flex-profile">
     <div class="img-container">
-      <img src="{{MEDIA_URL}}{{portfolio_post.picture}}"></img>
-      <form action="{% url 'delete_picture' portfolio_post.pk %}" enctype='multipart/form-data' method='POST'>
-        {% csrf_token %}
-        <button type="submit">Delete</button>
-      </form>
+      <img src="{{MEDIA_URL}}{{user.profile_picture}}"></img>
     </div>
   </div>
-  {% endfor %}
+  <div class="align-column">
+    <p class="p-profile">Introduction: {{ user.introduction }}</p>
+    <p class="p-profile"><a href="{% url 'logout' %}">logout</a></p>
+  </div>
 </div>
 
+<div class="border"></div>
+  
+  <h2 class="h2-profile">Your Portfolio</h2>
+  <p>Manage your portfolio here.</p>
+  
+  <form class="upload-form" method='POST' enctype='multipart/form-data'>
+    {{ form }} {% csrf_token %}
+    <button class="upload-button" type="file">upload</button>
+  </form>
+
+
+  <div class="align-container">
+    {% for portfolio_post in portfolio_posts %}
+    <div class="flex">
+      <div class="img-container">
+        <img src="{{MEDIA_URL}}{{portfolio_post.picture}}"></img>
+        <form action="{% url 'delete_picture' portfolio_post.pk %}" enctype='multipart/form-data' method='POST'>
+          {% csrf_token %}
+          <button class="delete-button" type="submit">Delete</button>
+        </form>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
 {% else %}
 <p>You are not logged in</p>
 <a href="{% url 'login' %}">login</a> |

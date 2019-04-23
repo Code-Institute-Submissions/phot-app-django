@@ -1,13 +1,16 @@
-{% extends 'base.html' %}
-
-{% block title %}Login{% endblock %}
-
-{% block content %}
-<h2>Login</h2>
-<form method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Login</button>
-</form>
-<p><a href="{% url 'password_reset' %}">reset password</a></p>
+{% extends 'base.html' %} {% block title %}Login{% endblock %} {% block content %}
+<div class="login-container">
+  <div class="bg-cl">
+    {% if user.is_authenticated %}
+    <h2>You're already logged in</h2>
+    <a href="{% url 'profile' %}">go to your profile page</a> {% else %}
+    <h2 class="h2-profile">Login</h2>
+    <form method="post">
+      {% csrf_token %} {{ form.as_p }}
+      <button class="login-button" type="submit">Login</button>
+    </form>
+    <p><a class="white" href="{% url 'password_reset' %}">Reset password</a></p>
+  </div>
+  {% endif %}
+</div>
 {% endblock %}
