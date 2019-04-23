@@ -1,10 +1,12 @@
 
 
+
 /*---------------body---------------*/
 body {
   font-family: helvetica;
   margin: 0;
 }
+
 
 
 /*-----------------navigation bar-------------------*/
@@ -61,10 +63,12 @@ a {
 }
 
 
+
 /*---------Hide Navigation Bar For Tablet And Desktop Design From Mobile Design---------*/
 .bg-tablet-desktop {
   display: none;
 }
+
 
 
 /*----------buttons and forms------------------*/
@@ -84,6 +88,8 @@ a {
 .no-bg:hover {
   color: red;
 }
+
+
 
 /*----------profile page--------------*/
   .p-profile {
@@ -136,13 +142,16 @@ textarea {
 .helptext {
   visibility: hidden;
 }
-ul {
+form ul {
   padding-top: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   list-style-type: none;
 }
+
+
+
 /*---------reset pages----------------*/
 .reset-button {
   border: none;
@@ -202,6 +211,8 @@ label {
   width: 4rem;
 }
 
+
+
 /*---------------images------------------*/
 .button-flex {
   margin: 0.5rem;
@@ -239,6 +250,8 @@ img {
   flex-direction: column;
 }
 
+
+
 /*----------pagination----------*/
 .pagination {
   list-style-type: none;
@@ -247,6 +260,58 @@ img {
   margin-bottom: 1.5rem;
   padding: 0;
 }
+
+
+
+/*------------Explore Pgae--------------------*/
+.explore-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 3;
+}
+.explore-page-container a {
+  color: white;
+}
+.bg-1, .bg-2, .bg-3, .bg-4, .bg-5, .bg-6, .bg-7, .bg-8, .bg-9 {
+  margin: 0.15rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  width: 100%;
+  max-width: 40rem;
+  text-align: center;
+}
+.bg-1 {
+  background-image: url("/static/img/nature.jpg");
+}
+.bg-2 {
+  background-image: url("/static/img/animals.jpg");
+}
+.bg-3 {
+  background-image: url("/static/img/cars.jpg");
+}
+.bg-4 {
+  background-image: url("/static/img/cities.jpg");
+}
+.bg-5 {
+  background-image: url("/static/img/fitness.jpg");
+}
+.bg-6 {
+  background-image: url("/static/img/motorcycles.jpg");
+}
+.bg-7 {
+  background-image: url("/static/img/people.jpg");
+}
+.bg-8 {
+  background-image: url("/static/img/space.jpg");
+}
+.bg-9 {
+  background-image: url("/static/img/technology.jpg");
+}
+
 
 
 /*---------------detail page------------------*/
@@ -290,6 +355,7 @@ img {
 }
 
 
+
 /*------------------donate page-------------*/
 .stripe-donate-plans-div {
   display: flex;
@@ -331,8 +397,7 @@ p {
 .upload-button {
   background-color: green;
 }
-input[type=file] {
-}
+
 
 
 /*----------------footer------------------*/
@@ -343,11 +408,15 @@ footer {
   padding: 2.5rem 0rem 2.5rem 0rem;
   width: 100%;
 }
+footer i {
+  margin-left: 1rem;
+}
 
 
-/*-------------Media Query Tablet---------------*/
 
+/*-----------------------------------Media Queries----------------------------------------*/
 @media (min-width:768px) {
+  
   
   
   /*--------------Navigation------------------*/
@@ -399,6 +468,7 @@ footer {
   }
   
   
+  
   /*----------images--------------*/
   .align-container {
     display: flex;
@@ -423,10 +493,9 @@ footer {
 }
 
 
-/*-------------Media Query Desktop---------------*/
+
+
 @media(min-width:1000px) {
-  
-  
   /*--------nav bar-----------*/
   nav ul li {
     padding-right: 2rem;
@@ -434,6 +503,9 @@ footer {
   .search-input {
     width: 15rem;
   }
+  
+  
+  
   /*---------images----------*/
   .align-container {
     display: flex;
@@ -448,6 +520,7 @@ footer {
     display: flex;
     align-items: center;
   }
+  
   
   
   /*-----------profile page-------------*/
@@ -491,7 +564,9 @@ footer {
 }
 
 
+
 @media(min-width:1200px) {
+  /*------------navbar-----------------*/
   nav ul li {
     padding-right: 3rem;
   }
@@ -514,8 +589,9 @@ footer {
     
   }
   
+  
+  
   /*---------login page---------------*/
-
   input {
     border: 1px solid grey;
     border-radius: 15px;
@@ -525,9 +601,8 @@ footer {
 }
 
 
+
 @media(min-width:1900px) {
-  
-  
   /*---------nav bar-------------*/
   nav ul li {
     padding-right: 5rem;
@@ -539,6 +614,8 @@ footer {
     width: 15rem;
   }
   
+  
+  
   /*---------login page---------------*/
   input {
     border: 1px solid grey;
@@ -546,6 +623,9 @@ footer {
     width: 15rem;
     padding: 0.5rem;
   }
+  
+  
+  
   /*-----------------images------------*/
   .align-container {
     display: flex;
@@ -560,13 +640,10 @@ footer {
     display: flex;
     align-items: center;
   }
-  
 }
 
 
 @media(min-width:2440px) {
-  
-  
   /*-----------nav bar-------------*/
   nav ul li {
     padding-right: 8rem;
@@ -577,6 +654,7 @@ footer {
   .search-input {
     width: 25rem;
   }
+  
   
   
   /*----------images----------*/
@@ -593,7 +671,6 @@ footer {
     display: flex;
     align-items: center;
   }
-  
 }
 
 

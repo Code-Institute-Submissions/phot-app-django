@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static%}
+{% block content %}
+
+<div class=explore-page-container>
+    
+<div class="bg-1">
+    <h2><a href="{% url 'nature' %}">Nature</a></h2>
+</div>
+<div class="bg-2">
+    <h2><a href="{% url 'animals' %}">Animals</a></h2>
+</div>
+<div class="bg-3">
+    <h2><a href="{% url 'cars' %}">Cars</a></h2>
+</div>
+<div class="bg-4">
+    <h2><a href="{% url 'cities' %}">Cities</a></h2>
+</div>
+<div class="bg-5">
+    <h2><a href="{% url 'fitness' %}">Fitness</a></h2>
+</div>
+<div class="bg-6">
+    <h2><a href="{% url 'motorcycles' %}">Motorcycles</a></h2>
+</div>
+<div class="bg-7">
+    <h2><a href="{% url 'people' %}">People</a></h2>
+</div>
+<div class="bg-8">
+    <h2><a href="{% url 'space' %}">Space</a></h2>
+</div>
+<div class="bg-9">
+    <h2><a href="{% url 'technology' %}">Technology</a></h2>
+</div>
+</div>
+{% endblock %}

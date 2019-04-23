@@ -15,3 +15,6 @@ def get_all_images(request):
         images = paginator.page(paginator.num_pages)
     
     return render(request, 'home/home.html', {'images': images})
+    
+def explore(request):
+    return render(request, 'explore/explore.html')
