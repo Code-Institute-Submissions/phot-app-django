@@ -236,9 +236,9 @@ label {
   height: auto;
 }
 img {
+  margin: 0;
   max-width: 100%;
   max-height: auto;
-  border-radius: 15px;
 }
 
 .flex-detail-page {
@@ -248,6 +248,7 @@ img {
   display: flex;
   align-items: center;
   flex-direction: column;
+  margin: 0;
 }
 
 
@@ -419,6 +420,12 @@ footer i {
   
   
   
+  /*--------------like button on image----------------*/
+  .img-like {
+    position: relative;
+    bottom: 3rem;
+    right: 22rem;
+  }
   /*--------------Navigation------------------*/
    .align-container {
     margin-bottom: 2rem;
@@ -504,7 +511,12 @@ footer i {
     width: 15rem;
   }
   
-  
+  /*--------------like button on image----------------*/
+  .img-like {
+    position: relative;
+    bottom: 3rem;
+    right: 13rem;
+  }
   
   /*------------------------donate plans page---------------------*/
   .stripe-donate-plans-div {
@@ -531,7 +543,7 @@ footer i {
     display: flex;
     align-items: center;
   }
-  
+
   
   
   /*-----------profile page-------------*/
