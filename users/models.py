@@ -26,7 +26,7 @@ class Pictures(models.Model):
         ("cars", "Cars"),
         ("cities", "Cities"),
         ("fitness", "Fitness"),
-        ("motorcycles", "Motorcycles"),
+        ("motorcycle", "Motorcycle"),
         ("people", "People"),
         ("space", "Space"),
         ("technology", "Technology"),

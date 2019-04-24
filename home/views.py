@@ -6,7 +6,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 def get_all_images(request):
     images_list = Pictures.objects.all().order_by('-date')
     page = request.GET.get('page', 1)
-    paginator = Paginator(images_list, 5)
+    paginator = Paginator(images_list, 15)
     try:
         images = paginator.page(page)
     except PageNotAnInteger:
