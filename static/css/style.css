@@ -506,6 +506,17 @@ footer i {
   
   
   
+  /*------------------------donate plans page---------------------*/
+  .stripe-donate-plans-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 15rem;
+  }
+  .donate-header {
+    margin: 2rem 2rem 2rem 2rem;
+  }
+  
   /*---------images----------*/
   .align-container {
     display: flex;

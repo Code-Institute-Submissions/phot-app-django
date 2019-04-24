@@ -1,11 +1,11 @@
 {% extends 'base.html' %} {% block content %}
 
+<div class="donate-header">
+<h2 class="h2-profile">Hi there!</h2>
+<p class="p">Great to hear that you want to contribute to our website. Photgallery is a non porfit organization that allows everyone to download and use pictures for free. Every donation you make will be used to give our staff and photgraphers the necessary tools
+  to do their jobs so that you can enjoy the best user experience! We all thank you in advance here at photgallery for your contribution.</p>
+</div>
 <div class="stripe-donate-plans-div">
-  
-  <h2>Hi there!</h2>
-  <p class="p">Great to hear that you want to contribute to our website. Photgallery is a non porfit organization that allows everyone to download and use pictures for free. Every donation you make will be used to give our staff and photgraphers the necessary tools
-    to do their jobs so that you can enjoy the best user experience! We all thank you in advance here at photgallery for your contribution.</p>
-    
   <div class="stripe-donate-plans-forms-div">
     <h3>Donate $5.00</h3>
     <form action="{% url 'charge_five' %}" method="post">

@@ -138,10 +138,17 @@ LOGIN_REDIRECT_URL = 'profile'
 LOGOUT_REDIRECT_URL = 'profile'
 
 
-#Send email to a file for development purposes
+# Mail Settings
+SEND_GRID_API_KEY = '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'
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'Geronimo1992'
+EMAIL_HOST_PASSWORD = 'CrazyHorse1992'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'limaj.sulejman@gmail.com'
+ACCOUNT_EMAIL_SUBJECT_PREFIX = 'contact email received from my website'
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 
-EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
-EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
