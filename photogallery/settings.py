@@ -161,8 +161,8 @@ MEDIA_URL = '/media/'
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
-STRIPE_PUBLISHABLE_KEY = "pk_test_ZOQMm0n0Y3OCoxznx8ufeunq00mXlHWdJX"
-STRIPE_SECRET_KEY = "sk_test_cFrwY9eSokJOtvTs51UlzouH00Sff0lpP0"
+STRIPE_PUBLISHABLE_KEY = os.environ.get("STRIPE_PUBLISHABLE_KEY")
+STRIPE_SECRET_KEY = os.environ.get("STRIPE_SECRET_KEY")
 
 
 
