@@ -2,6 +2,12 @@
 {% block content %}
 <h>ranking</h>
 
-<p>{{ rankings }}</p>
+{% for user_and_view in user_and_views %}
+<p>{{ user_and_view.user__full_name }} 
+    <img src="{{MEDIA_URL}}{{ user_and_view.user.profile_picture }}">
+    <br> 
+    views: {{ user_and_view.amount_of_views }}</p>
+    
+{% endfor %}
 
 {% endblock %}
