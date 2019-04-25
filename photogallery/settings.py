@@ -139,16 +139,15 @@ LOGOUT_REDIRECT_URL = 'profile'
 
 
 # Mail Settings
-SEND_GRID_API_KEY = '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'
-EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_HOST_USER = 'Geronimo1992'
-EMAIL_HOST_PASSWORD = 'CrazyHorse1992'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = 'limaj.sulejman@gmail.com'
-ACCOUNT_EMAIL_SUBJECT_PREFIX = 'contact email received from my website'
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-
+EMAIL_BACKEND = os.environ.get("EMAIL_BACKEND")
+SEND_GRID_API_KEY = os.environ.get("SEND_GRID_API_KEY")
+EMAIL_HOST = os.environ.get("EMAIL_HOST")
+EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
+EMAIL_PORT = os.environ.get("EMAIL_PORT")
+EMAIL_USE_TLS = os.environ.get("EMAIL_USE_TLS")
+DEFAULT_FROM_EMAIL = os.environ.get("DEFAULT_FROM_EMAIL")
+ACCOUNT_EMAIL_SUBJECT_PREFIX = os.environ.get("ACCOUNT_EMAIL_SUBJECT_PREFIX")
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
@@ -164,4 +163,7 @@ MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
 STRIPE_PUBLISHABLE_KEY = "pk_test_ZOQMm0n0Y3OCoxznx8ufeunq00mXlHWdJX"
 STRIPE_SECRET_KEY = "sk_test_cFrwY9eSokJOtvTs51UlzouH00Sff0lpP0"
+
+
+
 
