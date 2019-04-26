@@ -1,15 +1,33 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
-from users.forms import CustomUserCreationForm, UploadImageForm, DeleteForm
 from users.models import CustomUser, Pictures
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.forms import UserChangeForm, PasswordChangeForm
 from django.views import generic
-from django.views.generic import ListView, DetailView 
-from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib import messages
-from django.http import HttpResponseForbidden, HttpResponse, HttpResponseRedirect
+from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.decorators import login_required
 from home.views import get_all_images
+from users.forms import ( 
+        CustomUserCreationForm, 
+        UploadImageForm,
+        DeleteForm, 
+        EditProfileForm 
+        )
+from django.views.generic import (
+        CreateView, 
+        UpdateView, 
+        DeleteView,
+        ListView, 
+        DetailView 
+        )
+from django.http import (
+        HttpResponseForbidden, 
+        HttpResponse, 
+        HttpResponseRedirect
+        )
+
+
 
 class SignUp(generic.CreateView):
     form_class = CustomUserCreationForm
@@ -38,9 +56,37 @@ def delete_picture(request, pk):
         picture = Pictures.objects.get(pk=pk)
         picture.delete()
     return redirect(uploadImage)
+    
+        
+def edit_profile(request):
+    
+    if request.method == 'POST':
+        form = EditProfileForm(request.POST, instance=request.user)
+        if form.is_valid():
+            form.save()
+            return redirect(uploadImage)
+        
+    else:
+        form = EditProfileForm(instance=request.user)
+        return render(request, 'edit_profile/edit_profile.html', {'form': form})
         
         
-        
-        
-        
+def change_password(request):
+    
+    if request.method == 'POST':
+        form = PasswordChangeForm(data=request.POST, user=request.user)
+        if form.is_valid():
+            form.save()
+            update_session_auth_hash(request, form.user)
+            return redirect(uploadImage)
+        #else:
+           # return redirect(change_password)
+    else:
+        form = PasswordChangeForm(user=request.user)
+        return render(request, 'edit_profile/edit_password.html', {'form': form})
+    
+    
+    
+    
+    
         
