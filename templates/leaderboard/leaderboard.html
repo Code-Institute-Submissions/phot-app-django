@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 class="h1">Top 30</h1>
+{% for leaders in leaderboard %}
+<div class="leaderboard-container">
+    <div class="flex-row">
+        <img class="photographer-profile-picture-leaderboard" src="{{MEDIA_URL}}{{leaders.user__profile_picture}}">
+        <div class="p-flex">
+            <p class="p-leaderboard">{{ leaders.user__full_name }}</p>
+            <p class="p-leaderboard-views"><strong>{{ leaders.amount_of_views }}</strong> Views</p>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}

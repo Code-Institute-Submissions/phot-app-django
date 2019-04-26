@@ -5,7 +5,9 @@
   <meta charset="utf-8">
   <title>{% block title %}{% endblock %}</title>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
@@ -26,8 +28,13 @@
       <ul>
         <li><a href="{% url 'home' %}">Home</a></li>
         <li><a href="{% url 'explore' %}">Explore</a></li>
+        <li><a href="{% url 'leaderboard' %}">Leader Board</a></li>
+         {% if user.is_authenticated %}
+        <li><a href="{% url 'profile' %}">Profile</a></li>
+        {% else %}
         <li><a href="{% url 'login' %}">Sign In</a></li>
         <li><a href="{% url 'signup' %}">Sign Up</a></li>
+        {% endif %}
       </ul>
     </nav>
   </div>
@@ -44,6 +51,7 @@
       <ul>
         <li><a href="{% url 'home' %}">Home</a></li>
         <li><a href="{% url 'explore' %}">Explore</a></li>
+        <li><a href="{% url 'leaderboard' %}">Leader Board</a></li>
         {% if user.is_authenticated %}
         <li><a href="{% url 'profile' %}">Profile</a></li>
         {% else %}

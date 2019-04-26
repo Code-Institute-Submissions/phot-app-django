@@ -1,10 +1,11 @@
-
-
-
 /*---------------body---------------*/
 body {
   font-family: helvetica;
   margin: 0;
+}
+select {
+  border: 1px solid black;
+  border-radius: 25px;
 }
 
 
@@ -113,7 +114,7 @@ a {
   align-items: center;
   justify-content: center;
   align-content: center;
-  background-image: url("https://images.pexels.com/photos/462030/pexels-photo-462030.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+  background-image: url("/static/img/abstract.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -178,7 +179,7 @@ form ul {
   align-items: center;
 }
 .bg-cl {
-  background-image: url("https://images.pexels.com/photos/462030/pexels-photo-462030.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+  background-image: url("/static/img/abstract.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -191,7 +192,6 @@ form ul {
   width: 50%;
 }
 input {
-  border: 1px solid grey;
   border-radius: 15px;
   width: 10rem;
   padding: 0.5rem;
@@ -213,6 +213,39 @@ label {
 
 
 
+/*------------leaderboard page-------------------*/
+.leaderboard-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20vh;
+}
+.flex-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.h1 {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+.p-flex {
+  display: flex;
+  flex-direction: column;
+}
+.p-leaderboard {
+  margin-left: 0.5rem;
+}
+.p-leaderboard-views {
+  font-size: 0.85rem;
+  margin-left: 0.5rem;
+  color: grey;
+}
+.photographer-profile-picture-leaderboard {
+  width: 5.5rem;
+  height: 5.5rem;
+  border-radius: 50%;
+}
 /*---------------images------------------*/
 .button-flex {
   margin: 0.5rem;
@@ -260,6 +293,14 @@ img {
   justify-content: space-around;
   margin-bottom: 1.5rem;
   padding: 0;
+}
+.pagination li {
+  color: black;
+  padding: 1rem;
+  transition: all .2s ease-out;
+}
+.pagination li:hover {
+  background-color: grey;
 }
 
 
@@ -435,11 +476,16 @@ footer i {
   }
   .bg-tablet-desktop {
     display: flex;
-    background-color: black;
+    flex-direction: column-reverse;
+    background-image: url("/static/img/art.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     padding: 1rem 0.5rem 1rem 0rem;
     margin-bottom: 2.5rem;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
+    height: 25rem;
   }
   nav ul {
     padding-top: 1rem;
@@ -471,11 +517,31 @@ footer i {
     align-items: center;
   }
   .search-input {
-    width: 12rem;
+    border: 1px solid lightgrey;
+    width: 28rem;
   }
   
   
   
+  /*------------leaderboard page-------------------*/
+  .p-leaderboard {
+    margin-left: 0.5rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+  .p-leaderboard-views {
+    font-size: 0.9rem;
+    margin-left: 0.5rem;
+    color: grey;
+  }
+  .photographer-profile-picture-leaderboard {
+    width: 6.5rem;
+    height: 6.5rem;
+    border-radius: 50%;
+  }
+
+
+
   /*----------images--------------*/
   .align-container {
     display: flex;
@@ -508,7 +574,7 @@ footer i {
     padding-right: 2rem;
   }
   .search-input {
-    width: 15rem;
+    width: 30rem;
   }
   
   /*--------------like button on image----------------*/
@@ -528,6 +594,32 @@ footer i {
   .donate-header {
     margin: 2rem 2rem 2rem 2rem;
   }
+  
+  
+  
+  /*--------------leaderboard page---------------*/
+  .p-flex {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  }
+   .p-leaderboard {
+    margin-left: 0.5rem;
+    margin-right: 1.5rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+  .p-leaderboard-views {
+    font-size: 0.9rem;
+    margin-left: 0.5rem;
+    color: grey;
+  }
+  .photographer-profile-picture-leaderboard {
+    width: 6.5rem;
+    height: 6.5rem;
+    border-radius: 50%;
+  }
+  
   
   /*---------images----------*/
   .align-container {
@@ -594,7 +686,7 @@ footer i {
     padding-right: 3rem;
   }
   .search-input {
-    width: 15rem;
+    width: 33rem;
     margin-left: 1rem;
   }
   .align-container {
@@ -616,7 +708,6 @@ footer i {
   
   /*---------login page---------------*/
   input {
-    border: 1px solid grey;
     border-radius: 15px;
     width: 12rem;
     padding: 0.5rem;
@@ -634,17 +725,23 @@ footer i {
     padding: 0.4rem;
   }
   .search-input {
-    width: 15rem;
+    width: 33rem;
   }
   
   
   
   /*---------login page---------------*/
   input {
-    border: 1px solid grey;
     border-radius: 15px;
     width: 15rem;
     padding: 0.5rem;
+  }
+  
+  
+   /*--------leaderboard----------*/
+  .h1 {
+    margin-top: 5rem;
+    margin-bottom: 10rem;
   }
   
   
@@ -675,7 +772,7 @@ footer i {
     padding: 0.5rem;
   }
   .search-input {
-    width: 25rem;
+    width: 35rem;
   }
   
   
@@ -695,36 +792,3 @@ footer i {
     align-items: center;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

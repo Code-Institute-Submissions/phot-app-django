@@ -21,6 +21,7 @@ from django.conf.urls.static import static
 from home import views
 from django.urls import path
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.get_all_images, name="home"),
@@ -28,6 +29,7 @@ urlpatterns = [
     path('search/', include('searchbar.urls'), name="search"),
     path('details/', include('detail.urls')),
     path('explore/', include('explore.urls')),
+    path('detailprofile/', include('profilepage.urls')),
     path('leaderboard/', include('leaderboard.urls')),
     path('users/', include('users.urls')),
     path('users/', include('django.contrib.auth.urls')),
