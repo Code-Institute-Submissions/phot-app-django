@@ -2,10 +2,12 @@
 
 <div class="x">
 
+<a href="{% url 'profile_page' pk=image.pk %}"> 
 <div class="photographer">
     <img class="photographer-profile-picture" src="{{MEDIA_URL}}{{image.user.profile_picture}}">
     <span class="padding-space-img modify-span"> Photographer: {{ image.user.full_name }}</span>
 </div>
+</a>
 
 <div class="button-flex">
     <a class="donate-link" href="{% url 'donate' %}">Donate</a>

@@ -94,7 +94,15 @@ a {
 
 /*----------profile page--------------*/
   .p-profile {
-    margin: 1.5rem 0rem 1.5rem 0rem;
+    margin: 1.5rem 1rem 1.5rem 1rem;
+    color: black;
+    font-size: 1.2rem;
+  }
+  .p-profile-edit {
+    max-width: 6rem;
+  }
+  .p-profile-logout a, .p-profile-edit a {
+    color: white;
   }
   .h2-profile {
     text-align: center;

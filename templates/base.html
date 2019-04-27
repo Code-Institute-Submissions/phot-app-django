@@ -31,6 +31,7 @@
         <li><a href="{% url 'leaderboard' %}">Leader Board</a></li>
          {% if user.is_authenticated %}
         <li><a href="{% url 'profile' %}">Profile</a></li>
+        <li><a href="{% url 'logout' %}">Logout</a></li>
         {% else %}
         <li><a href="{% url 'login' %}">Sign In</a></li>
         <li><a href="{% url 'signup' %}">Sign Up</a></li>
@@ -54,6 +55,7 @@
         <li><a href="{% url 'leaderboard' %}">Leader Board</a></li>
         {% if user.is_authenticated %}
         <li><a href="{% url 'profile' %}">Profile</a></li>
+        <li><a href="{% url 'logout' %}">Logout</a></li>
         {% else %}
         <li><a href="{% url 'login' %}">Sign In</a></li>
         <li><a href="{% url 'signup' %}">Sign Up</a></li>

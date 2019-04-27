@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from users.models import CustomUser, Pictures
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.forms import UserChangeForm, PasswordChangeForm
@@ -70,6 +70,7 @@ def edit_profile(request):
         form = EditProfileForm(instance=request.user)
         return render(request, 'edit_profile/edit_profile.html', {'form': form})
         
+       
         
 def change_password(request):
     
@@ -79,8 +80,7 @@ def change_password(request):
             form.save()
             update_session_auth_hash(request, form.user)
             return redirect(uploadImage)
-        #else:
-           # return redirect(change_password)
+        
     else:
         form = PasswordChangeForm(user=request.user)
         return render(request, 'edit_profile/edit_password.html', {'form': form})

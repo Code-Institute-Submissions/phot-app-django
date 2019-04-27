@@ -28,6 +28,7 @@ urlpatterns = [
     path('explore/', views.explore, name="explore"),
     path('search/', include('searchbar.urls'), name="search"),
     path('details/', include('detail.urls')),
+    path('detail/', include('profilepage.urls')),
     path('explore/', include('explore.urls')),
     path('leaderboard/', include('leaderboard.urls')),
     path('users/', include('users.urls')),
