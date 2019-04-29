@@ -125,10 +125,6 @@ a {
 
 
 
-/*-----------hide id_password on edit profile page-----------------*/
-#id_password {
-  visibility: hidden;
-}
 /*----------profile page--------------*/
   .p-profile {
     margin: 1.5rem 1rem 1.5rem 1rem;

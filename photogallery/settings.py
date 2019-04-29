@@ -128,14 +128,12 @@ STATIC_URL = '/static/'
 
 
 #Use our user model instead of built in user model 
-
 AUTH_USER_MODEL = 'users.CustomUser'
 
 
-#Redirect to home page when login in and out
-
+#Redirect to profile when logging in, redirect to homepage when logging out
 LOGIN_REDIRECT_URL = 'profile'
-LOGOUT_REDIRECT_URL = 'profile'
+LOGOUT_REDIRECT_URL = 'home'
 
 
 # Mail Settings
