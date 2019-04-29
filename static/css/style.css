@@ -92,6 +92,38 @@ a {
 
 
 
+/*----------------profile page photgrapher for visitors---------------*/
+.profile-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.photo-wrap {
+  width: 22rem;
+}
+.picture {
+  max-width: 100%;
+}
+.profile-page-h2 {
+  margin-top: 3rem;
+}
+.profile-page-p {
+  font-size: 1.25rem;
+  margin: 0rem 0.80rem 1rem 0.80rem;
+}
+.desktop-style-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+.desktop-style-div-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5rem;
+}
+
+
 /*----------profile page--------------*/
   .p-profile {
     margin: 1.5rem 1rem 1.5rem 1rem;
@@ -531,6 +563,16 @@ footer i {
   
   
   
+  /*----------------profile page photgrapher for visitors---------------*/
+  .photo-wrap {
+    width: 28rem;
+  }
+  .profile-page-h2 {
+    font-size: 2rem;
+  }
+
+
+
   /*------------leaderboard page-------------------*/
   .p-leaderboard {
     margin-left: 0.5rem;
@@ -601,6 +643,15 @@ footer i {
   }
   .donate-header {
     margin: 2rem 2rem 2rem 2rem;
+  }
+  
+  
+  /*----------------profile page photgrapher for visitors---------------*/
+  .photo-wrap {
+    width: 33rem;
+  }
+  .profile-page-h2 {
+    font-size: 2.5rem;
   }
   
   
@@ -714,6 +765,42 @@ footer i {
   
   
   
+  /*----------------profile page photgrapher for visitors---------------*/
+  .profile-page-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .photo-wrap {
+    width: 22rem;
+    margin-left: 1.5rem
+  }
+  .picture {
+    max-width: 100%;
+  }
+  .profile-page-h2 {
+    margin-top: 3rem;
+    margin-left: 1.5rem;
+  }
+  .profile-page-p {
+    font-size: 1.25rem;
+    margin: 0rem 1.5rem 1rem 1.5rem;
+    text-align: left;
+  }
+  .desktop-style-div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .desktop-style-div-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 5rem;
+  }
+
+  
+  
   /*---------login page---------------*/
   input {
     border-radius: 15px;
@@ -734,6 +821,14 @@ footer i {
   }
   .search-input {
     width: 33rem;
+  }
+  
+  
+  
+  /*-------profiel page photgrapher for visitors--------------*/
+  .photo-wrap {
+    width: 25rem;
+    margin-left: 1.5rem
   }
   
   
@@ -781,6 +876,14 @@ footer i {
   }
   .search-input {
     width: 35rem;
+  }
+  
+  
+  
+  /*-------profiel page photgrapher for visitors--------------*/
+  .photo-wrap {
+    width: 28rem;
+    margin-left: 1.5rem
   }
   
   
