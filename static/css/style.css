@@ -124,6 +124,11 @@ a {
 }
 
 
+
+/*-----------hide id_password on edit profile page-----------------*/
+#id_password {
+  visibility: hidden;
+}
 /*----------profile page--------------*/
   .p-profile {
     margin: 1.5rem 1rem 1.5rem 1rem;
@@ -235,9 +240,6 @@ input {
   border-radius: 15px;
   width: 10rem;
   padding: 0.5rem;
-}
-label {
-  font-size: 1em;
 }
 .white {
   color: white;
