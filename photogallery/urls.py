@@ -21,7 +21,6 @@ from django.conf.urls.static import static
 from home import views
 from django.urls import path
 
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.get_all_images, name="home"),
