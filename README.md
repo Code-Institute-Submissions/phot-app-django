@@ -5,8 +5,8 @@ This is a Phototgallery that allows photographers to post their pictures online 
 
 # UX
 The design of the website is simple and it is straight forward how to use it. It is responsive and it has been developed with the end user in mind. The navigation has bg image and the text is white.
-The page uses a flexbox grid to align the pictures on the screen, allowing for a clean interface. There is a detail page where a user can donwload the picture and donate a sum to the non profit company if he chooses do to so. On the left upper corner on the detai page, there 
-is alittle bit of info about the photgrapher. When clicked on it, you get redirected to the profile of that photgrpaher where you can view an intro and his picture. There is a search bar to make navigation easier by earching a certain category of pictures. There is a ldear board page where 
+The page uses a flexbox grid to align the pictures on the screen, allowing for a clean interface. There is a detail page where a user can donwload the picture and donate a sum to the non profit company if he chooses do to so. On the left upper corner on the detail page, there 
+is a little bit of info about the photgrapher. When clicked on it, you get redirected to the profile of that photographer where you can view an intro and his picture. There is a search bar to make navigation easier by searching a certain category of pictures. There is a leader board page where 
 visitors can view the most popular photgrpahers ranked in a top thirty listing. 
 
 # Features
@@ -19,7 +19,6 @@ Wireframes can be found [here](https://github.com/Geronimo1992/phot-app-django/t
 # Techologies Used
 * [HTML](https://www.w3schools.com/html/html_intro.asp) has been used for the structure of the page
 * [CSS](https://www.w3schools.com/css/) has been used for styling
-* [Bootstrap](https://getbootstrap.com/) has been used for the navigation bar, the grid layout and forms
 * [Python](https://www.python.org/) has been used to write the backend code
 * [Django](https://www.djangoproject.com/) has been used to facilitate the backend development
 * [PostgreSQL](https://www.postgresql.org/) has been used as a database
