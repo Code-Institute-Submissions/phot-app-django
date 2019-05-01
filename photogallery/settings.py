@@ -141,17 +141,21 @@ LOGIN_REDIRECT_URL = 'profile'
 LOGOUT_REDIRECT_URL = 'home'
 
 
+
 # Mail Settings
-EMAIL_BACKEND = os.environ.get("EMAIL_BACKEND")
+
+#env vars
 SEND_GRID_API_KEY = os.environ.get("SEND_GRID_API_KEY")
-EMAIL_HOST = os.environ.get("EMAIL_HOST")
 EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
-EMAIL_PORT = os.environ.get("EMAIL_PORT")
-EMAIL_USE_TLS = os.environ.get("EMAIL_USE_TLS")
 DEFAULT_FROM_EMAIL = os.environ.get("DEFAULT_FROM_EMAIL")
-ACCOUNT_EMAIL_SUBJECT_PREFIX = os.environ.get("ACCOUNT_EMAIL_SUBJECT_PREFIX")
 
+#other mail settings
+EMAIL_HOST = "smtp.sendgird.net"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+ACCOUNT_EMAIL_SUBJECT_PREFIX = "contact mail received"
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 AWS_S3_OBJECT_PARAMETERS = {
     'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
