@@ -17,6 +17,7 @@ visitors can view the most popular photgrpahers ranked in a top thirty listing.
 Wireframes can be found [here](https://github.com/Geronimo1992/phot-app-django/tree/master/wireframes)
 
 # Techologies Used
+
 * [HTML](https://www.w3schools.com/html/html_intro.asp) has been used for the structure of the page
 * [CSS](https://www.w3schools.com/css/) has been used for styling
 * [Python](https://www.python.org/) has been used to write the backend code
@@ -46,4 +47,5 @@ Wireframes can be found [here](https://github.com/Geronimo1992/phot-app-django/t
 * Password reset tutorial has been taken from a yoututbe video [here](https://www.youtube.com/watch?v=VLOM-mZCfpk)
 * Pagination in django tutorial has been taken [here](https://simpleisbetterthancomplex.com/tutorial/2016/08/03/how-to-paginate-with-django.html)
 * Sendgrid tutorial has been taken [here](https://simpleisbetterthancomplex.com/tutorial/2016/06/13/how-to-send-email.html)
+* [Pexels.com](https://www.pexels.com/) has been my go to for all the pictures for this project. 
 * Many more resources have been consulted online for advice and python syntax (stackoverflow, pyhton pep8, blogs, etc).
