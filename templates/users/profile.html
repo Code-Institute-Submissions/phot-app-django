@@ -12,8 +12,8 @@
   </div>
   <div class="align-column">
     <p class="p-profile">Introduction: {{ user.introduction }}</p>
-    <p class="p-profile"><a href="{% url 'edit_profile' %}">edit profile</a></p>
-    <p class="p-profile"><a href="{% url 'change-password' %}">change your password</a></p>
+    <p class="p-profile"><a href="{% url 'edit_profile' %}">Edit Profile</a></p>
+    <p class="p-profile"><a href="{% url 'change_password' %}">Change Password</a></p>
   </div>
 </div>
 
@@ -26,7 +26,6 @@
     {{ form }} {% csrf_token %}
     <button class="upload-button" type="file">upload</button>
   </form>
-
 
   <div class="align-container">
     {% for portfolio_post in portfolio_posts %}

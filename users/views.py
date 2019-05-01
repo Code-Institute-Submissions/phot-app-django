@@ -80,6 +80,8 @@ def change_password(request):
             form.save()
             update_session_auth_hash(request, form.user)
             return redirect(uploadImage)
+        else:
+            return redirect(change_password)
         
     else:
         form = PasswordChangeForm(user=request.user)
