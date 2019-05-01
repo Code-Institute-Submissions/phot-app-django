@@ -7,7 +7,8 @@ from users.forms import UploadImageForm, EditProfileForm
 #models
 
 class PictureTest(TestCase):
-
+    
+    #models
     def create_picture(self, picture="only a test"):
         return Pictures.objects.create(picture=picture)
 
@@ -16,10 +17,6 @@ class PictureTest(TestCase):
         self.assertTrue(isinstance(w, Pictures))
         self.assertEqual(w.__unicode__(), w.picture)
         
-        
-        
-
-class CustomUserTest(TestCase):
 
     def create_email(self, email="only a test"):
         return CustomUser.objects.create(email=email)
@@ -28,3 +25,5 @@ class CustomUserTest(TestCase):
         w = self.create_email()
         self.assertTrue(isinstance(w, CustomUser))
         self.assertEqual(w.__unicode__(), w.email)
+        
+    

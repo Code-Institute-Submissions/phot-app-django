@@ -84,7 +84,7 @@ def get_category_fitness(request):
 
 def get_category_motorcycles(request):
     
-    motorcycles_list = Pictures.objects.filter(category__exact="motorcycles").order_by('-date')
+    motorcycles_list = Pictures.objects.filter(category__exact="motorcycle").order_by('-date')
     page = request.GET.get('page', 1)
     paginator = Paginator(motorcycles_list, 15)
     try:
