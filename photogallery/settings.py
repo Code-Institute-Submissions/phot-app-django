@@ -144,7 +144,6 @@ LOGOUT_REDIRECT_URL = 'home'
 
 
 # Mail Settings
-
 #env vars
 SENDGRID_API_KEY = os.environ.get("SENDGRID_API_KEY")
 EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
