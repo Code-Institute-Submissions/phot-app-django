@@ -9,7 +9,7 @@
                 </a>
       <form class="img-like" data-likes="{{image.likes}}" data-id="{{image.id}}" action="{% url 'detail_image' pk=image.pk %}" method='POST'>
         {% csrf_token %}
-        <button class="no-bg" type="submit"><i class="far fa-heart"></i>{{ image.likes }}</button>
+        <button class="no-bg" type="submit"><i class="far fa-heart"></i></button>
       </form>
     </div>
   </div>
