@@ -6,11 +6,11 @@
     <div class="img-container">
       <a href="{% url 'detail_image' pk=image.pk %}">
                 <img src="{{ MEDIA_URL }}{{ image.picture }}">
-                </a>
-      <form class="img-like" data-likes="{{image.likes}}" data-id="{{image.id}}" action="{% url 'detail_image' pk=image.pk %}" method='POST'>
+                 <form class="img-like" data-likes="{{image.likes}}" data-id="{{image.id}}" action="{% url 'detail_image' pk=image.pk %}" method='POST'>
         {% csrf_token %}
         <button class="no-bg" type="submit"><i class="far fa-heart"></i></button>
       </form>
+                </a>
     </div>
   </div>
   {% endfor %}
