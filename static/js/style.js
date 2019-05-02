@@ -9,7 +9,6 @@ $(document).ready(function() {
       e.preventDefault();
   });
   
-  
   //Ajax to like button without refresh
   $('.img-like').on('submit', function(e) {
     e.preventDefault();
