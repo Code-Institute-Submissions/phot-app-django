@@ -26,11 +26,4 @@ class PictureTest(TestCase):
         self.assertTrue(isinstance(w, CustomUser))
         self.assertEqual(w.__unicode__(), w.email)
         
-    #forms
-    def test_valid_form(self):
-        p = Pictures.objects.create(picture="test")
-        data = {'picture': p.picture}
-        form = UploadImageForm(data=data)
-        self.assertTrue(form.is_valid())
-        
     
