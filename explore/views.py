@@ -2,32 +2,29 @@ from django.shortcuts import render
 from users.models import Pictures
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-
-
-
-
+PAGES = 15
 
 
 def get_category_nature(request):
     
     nature_list = Pictures.objects.filter(category__exact="nature").order_by('-date')
     page = request.GET.get('page', 1)
-    paginator = Paginator(nature_list, 15)
+    paginator = Paginator(nature_list, PAGES)
     try:
         nature = paginator.page(page)
     except PageNotAnInteger:
         nature = paginator.page(1)
     except EmptyPage: 
         nature = paginator.page(paginator.num_pages)
+        
     return render(request, 'explore/nature.html', {'nature': nature})
-
 
 
 def get_category_animals(request):
     
     animals_list = Pictures.objects.filter(category__exact="animals").order_by('-date')
     page = request.GET.get('page', 1)
-    paginator = Paginator(animals_list, 15)
+    paginator = Paginator(animals_list, PAGES)
     try:
         animals = paginator.page(page)
     except PageNotAnInteger:
@@ -42,7 +39,7 @@ def get_category_cars(request):
     
     cars_list = Pictures.objects.filter(category__exact="cars").order_by('-date')
     page = request.GET.get('page', 1)
-    paginator = Paginator(cars_list, 15)
+    paginator = Paginator(cars_list, PAGES)
     try:
         cars = paginator.page(page)
     except PageNotAnInteger:
@@ -57,7 +54,7 @@ def get_category_cities(request):
     
     cities_list = Pictures.objects.filter(category__exact="cities").order_by('-date')
     page = request.GET.get('page', 1)
-    paginator = Paginator(cities_list, 15)
+    paginator = Paginator(cities_list, PAGES)
     try:
         cities = paginator.page(page)
     except PageNotAnInteger:
@@ -72,7 +69,7 @@ def get_category_fitness(request):
     
     fitness_list = Pictures.objects.filter(category__exact="fitness").order_by('-date')
     page = request.GET.get('page', 1)
-    paginator = Paginator(fitness_list, 15)
+    paginator = Paginator(fitness_list, PAGES)
     try:
         fitness = paginator.page(page)
     except PageNotAnInteger:
@@ -87,7 +84,7 @@ def get_category_motorcycles(request):
     
     motorcycles_list = Pictures.objects.filter(category__exact="motorcycle").order_by('-date')
     page = request.GET.get('page', 1)
-    paginator = Paginator(motorcycles_list, 15)
+    paginator = Paginator(motorcycles_list, PAGES)
     try:
         motorcycles = paginator.page(page)
     except PageNotAnInteger:
@@ -102,7 +99,7 @@ def get_category_people(request):
     
     people_list = Pictures.objects.filter(category__exact="people").order_by('-date')
     page = request.GET.get('page', 1)
-    paginator = Paginator(people_list, 15)
+    paginator = Paginator(people_list, PAGES)
     try:
         people = paginator.page(page)
     except PageNotAnInteger:
@@ -117,7 +114,7 @@ def get_category_space(request):
     
     space_list = Pictures.objects.filter(category__exact="space").order_by('-date')
     page = request.GET.get('page', 1)
-    paginator = Paginator(space_list, 15)
+    paginator = Paginator(space_list, PAGES)
     try:
         space = paginator.page(page)
     except PageNotAnInteger:
@@ -132,7 +129,7 @@ def get_category_technology(request):
     
     technology_list = Pictures.objects.filter(category__exact="technology").order_by('-date')
     page = request.GET.get('page', 1)
-    paginator = Paginator(technology_list, 15)
+    paginator = Paginator(technology_list, PAGES)
     try:
         technology = paginator.page(page)
     except PageNotAnInteger:
@@ -140,23 +137,4 @@ def get_category_technology(request):
     except EmptyPage: 
         technology = paginator.page(paginator.num_pages)
     return render(request, 'explore/technology.html', {'technology': technology})
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     

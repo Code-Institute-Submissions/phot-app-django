@@ -1,5 +1,6 @@
 *.sqlite3
 *.users.db
 *.Pictures.db
+*.db.sqlite3
 __pychache__
 env.py

@@ -48,8 +48,8 @@ that do not belong on your public repositories.
 8. Install Gunicorn by using command sudo pip3 install gunicorn. Go to documentation of gunicorn to learn about it [documentation](https://gunicorn.org/)
 9. Install whitenoise (sudo pip3 install whitenoise) which allows you to serve your static files to the server, this is mandatory, see [documentation for more about it](http://whitenoise.evans.io/en/stable/)
 10. Install Pillow (sudo pip3 install pillow) which allows you to process media files. [documentation](https://pillow.readthedocs.io/en/stable/)
-11. You can use amazon web services if you like to store everything in the cloud. See [documentation](https://docs.aws.amazon.com/s3/?id=docs_gateway) for more about this. [Click here](https://simpleisbetterthancomplex.com/tutorial/2017/08/01/how-to-setup-amazon-s3-in-a-django-project.html) for a tutorial on how to configurate your settings.py file to host your sttic files on aws.
-12. Once you've installed everything and are ready to go, you can clikc on deploy in the heroku dashboard and connect your github account. Once everyhting has been loaded you can view your deployed app on heroku.
+11. You can use amazon web services if you like to store everything in the cloud. See [documentation](https://docs.aws.amazon.com/s3/?id=docs_gateway) for more about this. [Click here](https://simpleisbetterthancomplex.com/tutorial/2017/08/01/how-to-setup-amazon-s3-in-a-django-project.html) for a tutorial on how to configurate your settings.py file to host your stqtic files on aws.
+12. Once you've installed everything and are ready to go, you can click on deploy in the heroku dashboard and connect your github account. Once everyhting has been loaded you can view your deployed app on heroku.
 
 
 # Credits
