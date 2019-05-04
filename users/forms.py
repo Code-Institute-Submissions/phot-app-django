@@ -31,5 +31,5 @@ class DeleteForm(forms.ModelForm):
 class EditProfileForm(UserChangeForm):
     class Meta:
         model = CustomUser
-        fields = ('full_name', 'email', 'introduction', 'password')
+        fields = ('profile_picture', 'full_name', 'email', 'introduction', 'password')
         

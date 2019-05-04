@@ -5,6 +5,9 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
 
+
+
+
 def get_category_nature(request):
     
     nature_list = Pictures.objects.filter(category__exact="nature").order_by('-date')
@@ -31,7 +34,6 @@ def get_category_animals(request):
         animals = paginator.page(1)
     except EmptyPage: 
         animals = paginator.page(paginator.num_pages)
-        
     return render(request, 'explore/animals.html', {'animals': animals})
 
 
@@ -47,7 +49,6 @@ def get_category_cars(request):
         cars = paginator.page(1)
     except EmptyPage: 
         cars = paginator.page(paginator.num_pages)
-        
     return render(request, 'explore/cars.html', {'cars': cars})
  
  
