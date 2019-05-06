@@ -13,12 +13,12 @@ class PicturesListViewTest(TestCase):
                 picture='test {}'.format(pictures_id), 
                 
             )
-    """
-    every view in explore has been tested, 
-    it would have made not much sense to rewrite 
-    this code over and over again nine times, this 
-    code has been used as boiler plate to test all nine views.
-    """
+
+    #every view in explore has been tested, 
+    #it would have made not much sense to rewrite 
+    #this code over and over again nine times, this 
+    #code has been used as boiler plate to test all nine views.
+
     
     def test_view_url_exists_at_desired_location(self):
         response = self.client.get('/explore/technology/')
