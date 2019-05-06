@@ -16,8 +16,7 @@ class PictureTest(TestCase):
         w = self.create_picture()
         self.assertTrue(isinstance(w, Pictures))
         self.assertEqual(w.__unicode__(), w.picture)
-        
-
+    
     def create_email(self, email="only a test"):
         return CustomUser.objects.create(email=email)
 
@@ -26,4 +25,5 @@ class PictureTest(TestCase):
         self.assertTrue(isinstance(w, CustomUser))
         self.assertEqual(w.__unicode__(), w.email)
         
-    
+
+
